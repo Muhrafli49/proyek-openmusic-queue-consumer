@@ -28,19 +28,7 @@ async getPlaylistSong(playlistId) {
 
     const result = await this._pool.query(query);
 
-
-    const data = {
-        playlist: {
-            id: result.rows[0].playlist_id,
-            name: result.rows[0].playlist_name,
-            songs: result.rows.map((row) => ({
-                id: row.song_id,
-                title: row.song_title,
-                performer: row.song_performer,
-            })),
-        },
-    }
-    return data
+    return result.rows;
     }
 }
 

@@ -18,11 +18,11 @@ class Listener {
     
             const result = await this._mailSender.sendEmail(
             targetEmail,
-            data.playlist.name,
             JSON.stringify(data),
             );
     
             console.log(result);
+            
         } catch (error) {
             console.error(error);
         }
